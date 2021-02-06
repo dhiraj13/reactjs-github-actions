@@ -1,24 +1,31 @@
 import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <div>
-          <h1>Hello World!</h1>
-        </div>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact={true} path="/" component={HomePage} />
+          <Route exact={true} path="/dashboard" component={DashboardPage} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+function HomePage() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+    </div>
+  );
+}
+
+function DashboardPage() {
+  return (
+    <div>
+      <h1>Dashboard Page</h1>
     </div>
   );
 }
